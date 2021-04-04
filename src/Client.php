@@ -12,17 +12,17 @@ namespace Reolink_API;
  */
 class Client {
     /**
-    * private properties
+    * protected properties
     */
-    private $user;
-    private $password;
-    private $ip;
+    protected $user;
+    protected $password;
+    protected $ip;
 
-    private $token;
+    protected $token;
 
-    private $is_loggedin;
+    protected $is_loggedin;
 
-    private $debug;
+    protected $debug;
 
     /**
      * Construct the Reolink Camera API client class
@@ -62,7 +62,7 @@ class Client {
     * Outputs a message to stdout if debug mode is enabled
     * @param message Message to output
      */
-    private function outputStdout($message)
+    protected function outputStdout($message)
     {
         //If debug option is not set, don't output anything on stdout
         if (!$this->debug) {
@@ -107,7 +107,7 @@ class Client {
      * @param string payload json payload
      * @return response the response object
      */
-    private function request($method, $cmd, $payload)
+    protected function request($method, $cmd, $payload)
     {
         $client = new \GuzzleHttp\Client([
                                             'base_uri' => 'http://' . $this->ip,
@@ -184,7 +184,7 @@ class Client {
     * @param string typeOfRequest the type of the request
     * @return response the response object
     */
-    private function queryCamera($parameters, $typeOfRequest)
+    protected function queryCamera($parameters, $typeOfRequest)
     {
         // if the request is not of type login and login as not been called yet, return false
         if (!strcmp($typeOfRequest, 'Login') && !$this->is_loggedin) {
@@ -342,7 +342,7 @@ class Client {
     * @param response response the response object from the camera
     * @return boolean a boolean indicating if the response was successful
     */
-    private function checkResponse($response)
+    protected function checkResponse($response)
     {
         $data = json_decode($response->getBody());
 
