@@ -1,5 +1,5 @@
 {
-    "name": 		"mm28ajos/php-reolink-camera-api",
+    "name": 		"butu/php-reolink-camera-api",
     "type": 		"library",
     "description": 	"A minimal PHP API for Reolink cameras.",
     "keywords": [
@@ -9,7 +9,7 @@
 		"api",
 		"client"
 	],
-    "homepage": 	"https://github.com/mm28ajos/PHPReolinkCameraAPI",
+    "homepage": 	"https://github.com/butu/PHPReolinkCameraAPI",
     "license": 		"MIT",
     "require": {
         "php": ">=5.4.0",
